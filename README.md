@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Clone and run on a new Ubuntu machine to configure `emacs` and `tmux`
+Clone and run on a new Ubuntu machine to configure `emacs` `vim` and `tmux`
 as follows:
 
 ```sh
