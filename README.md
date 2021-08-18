@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-Clone and run on a new Ubuntu machine to configure `vim`
+Clone repo and run `setup.sh` to configure
 
 ```sh
 cd $HOME
