@@ -8,6 +8,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
 
 - create:
     - ~/downloads
