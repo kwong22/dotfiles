@@ -1,10 +1,10 @@
 dotfiles
 ========
 
-Clone repo and run `setup.sh` to configure
+Clone repo and run `install` to configure
 
 ```sh
 cd $HOME
 git clone https://github.com/kwong22/dotfiles.git
-./dotfiles/setup.sh
+./dotfiles/install
 ```
