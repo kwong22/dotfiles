@@ -9,6 +9,9 @@
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.config/nvim:
+        create: true
+        path: config-nvim
 
 - create:
     - ~/downloads
