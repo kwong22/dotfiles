@@ -6,11 +6,11 @@ map("i", "jk", "<esc>")
 map("v", "J", ":m '>+1<CR>gv=gv") -- move highlighted line down
 map("v", "K", ":m '<-2<CR>gv=gv") -- move highlighted line up
 
-map("n", "J", "mzJ`z") -- keep cursor in same position when appending following line
-map("n", "<C-d>", "<C-d>zz") -- keep cursor in middle of screen when scrolling
-map("n", "<C-u>", "<C-u>zz") -- keep cursor in middle of screen when scrolling
-map("n", "n", "nzzzv") -- keep cursor in middle of screen when going through searches
-map("n", "N", "Nzzzv") -- keep cursor in middle of screen when going through searches
+map("n", "J", "mzJ`z")            -- keep cursor in same position when appending following line
+map("n", "<C-d>", "<C-d>zz")      -- keep cursor in middle of screen when scrolling
+map("n", "<C-u>", "<C-u>zz")      -- keep cursor in middle of screen when scrolling
+map("n", "n", "nzzzv")            -- keep cursor in middle of screen when going through searches
+map("n", "N", "Nzzzv")            -- keep cursor in middle of screen when going through searches
 
 -- map('x', '<leader>p', [["_dP]]) -- keep what is pasted (send highlighted portion into void register)
 
@@ -86,14 +86,14 @@ map("n", "<leader>do", buffers.delete_others, "Delete other buffers")
 map("n", "<leader>da", buffers.delete_all, "Delete all buffers")
 
 -- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
+map("n", "<S-l>", ":bnext<cr>")
+map("n", "<S-h>", ":bprevious<cr>")
 
-map("n", "<leader>bp", ":bprevious<CR>")
-map("n", "<leader>bn", ":bnext<CR>")
-map("n", "<leader>bf", ":bfirst<CR>")
-map("n", "<leader>bl", ":blast<CR>")
-map("n", "<leader>bd", ":bdelete<CR>")
+map("n", "<leader>bp", ":bprevious<cr>")
+map("n", "<leader>bn", ":bnext<cr>")
+map("n", "<leader>bf", ":bfirst<cr>")
+map("n", "<leader>bl", ":blast<cr>")
+map("n", "<leader>bd", ":bdelete<cr>")
 
 -- Stay in indent mode
 map("v", "<", "<gv")
@@ -139,11 +139,11 @@ vim.keymap.set("", "T", function()
 end, { remap = true })
 
 -- Toggle colored column at 81
-map("n", "<leader>|", ':execute "set colorcolumn=" . (&colorcolumn == "" ? "81" : "")<CR>')
+map("n", "<leader>|", ':execute "set colorcolumn=" . (&colorcolumn == "" ? "81" : "")<cr>')
 
 -- FloaTerm configuration
-map("n", "<leader>t", "<Cmd>Lspsaga term_toggle<CR>")
-map("t", "<Esc>", "<C-\\><C-n>:q<CR>")
+map("n", "<leader>t", "<cmd>Lspsaga term_toggle<cr>")
+map("t", "<Esc>", "<C-\\><C-n>:q<cr>")
 
 -- map("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<cr>")
 -- map("n", "<leader>fp", ":lua require('telescope.builtin').git_files()<cr>")
@@ -169,23 +169,24 @@ vim.cmd([[
 nmap <F9> <cmd>call vimspector#Launch()<cr>
 nmap <F5> <cmd>call vimspector#StepOver()<cr>
 nmap <F8> <cmd>call vimspector#Reset()<cr>
-nmap <F11> <cmd>call vimspector#StepOver()<cr>")
-nmap <F12> <cmd>call vimspector#StepOut()<cr>")
-nmap <F10> <cmd>call vimspector#StepInto()<cr>")
+nmap <F11> <cmd>call vimspector#StepOver()<cr>
+nmap <F12> <cmd>call vimspector#StepOut()<cr>
+nmap <F10> <cmd>call vimspector#StepInto()<cr>
 ]])
-map("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>")
+-- map("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>")
+map("n", "<leader>db", ":call vimspector#ToggleBreakpoint()<cr>")
 -- map('n', "DB", ":call vimspector#ClearBreakpoints()<cr>")
-map("n", "Dw", ":call vimspector#AddWatch()<cr>")
-map("n", "De", ":call vimspector#Evaluate()<cr>")
+-- map("n", "Dw", ":call vimspector#AddWatch()<cr>")
+map("n", "<leader>dw", ":call vimspector#AddWatch()<cr>")
+-- map("n", "De", ":call vimspector#Evaluate()<cr>")
 
 -- map('n', '<leader>dw', ':VimspectorWatch ')
 map("n", "<leader>de", ":VimspectorEval ")
 
 -- Todo List
-map("n", "<leader>qf", ":TodoQuickFix<CR>")
+map("n", "<leader>qf", ":TodoQuickFix<cr>")
 
 -- Trouble
-map("n", "<leader>e", ":TroubleToggle<CR>")
+map("n", "<leader>e", ":TroubleToggle<cr>")
 
-map("n", "<leader>u", ":UndotreeToggle<CR>")
-
+map("n", "<leader>u", ":UndotreeToggle<cr>")

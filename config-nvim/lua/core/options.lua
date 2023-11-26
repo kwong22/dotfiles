@@ -56,7 +56,8 @@ vim.o.guifont = "MonacoNerdFontMono-Regular:h12"
 -- updatetime: set updatetime for CursorHold
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
-vim.api.nvim_set_option_value("updatetime", 300, {})
+-- vim.api.nvim_set_option_value("updatetime", 300, {})
+vim.api.nvim_set_option_value("updatetime", 250, {})
 
 -- Fixed column for diagnostics to appear
 -- Show autodiagnostic popup on cursor hover_range

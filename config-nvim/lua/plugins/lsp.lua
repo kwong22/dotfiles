@@ -68,25 +68,30 @@ return {
 			local on_attach = function(client, bufnr)
 				local lsp_map = require("helpers.keys").lsp_map
 
-				lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
+				-- lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
+				lsp_map("<leader>rn", vim.lsp.buf.rename, bufnr, "Rename symbol")
+
 				-- lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code action")
-				lsp_map("<leader>la", "<cmd>Lspsaga code_action<CR>", bufnr, "Code action")
+				lsp_map("<leader>ca", "<cmd>Lspsaga code_action<cr>", bufnr, "Code action")
+
 				-- lsp_map("<leader>ld", vim.lsp.buf.type_definition, bufnr, "Type definition")
-				lsp_map("<leader>ld", "<cmd>Lspsaga goto_type_definition<CR>", bufnr, "Type definition")
-				lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
+				lsp_map("gt", "<cmd>Lspsaga goto_type_definition<cr>", bufnr, "Type definition")
+
+				-- lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
+				lsp_map("gs", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 
 				-- lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
-				lsp_map("gd", "<cmd>Lspsaga goto_definition<CR>", bufnr, "Goto Definition")
+				lsp_map("gd", "<cmd>Lspsaga goto_definition<cr>", bufnr, "Goto Definition")
 				lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
 				lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
 				-- lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 				lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
-				lsp_map("gp", "<cmd>Lspsaga peek_definition<CR>", bufnr, "Peek definition")
-				lsp_map("K", "<cmd>Lspsaga hover_doc<CR>", bufnr, "Hover documentation")
-				lsp_map("<leader>st", "<cmd>Lspsaga outline<CR>", bufnr, "Symbols outline")
-				lsp_map("g[", "<cmd>Lspsaga diagnostic_jump_prev<CR>", bufnr, "Go to previous diagnostic")
-				lsp_map("g]", "<cmd>Lspsaga diagnostic_jump_next<CR>", bufnr, "Go to next diagnostic")
+				lsp_map("gp", "<cmd>Lspsaga peek_definition<cr>", bufnr, "Peek definition")
+				lsp_map("K", "<cmd>Lspsaga hover_doc<cr>", bufnr, "Hover documentation")
+				lsp_map("<leader>st", "<cmd>Lspsaga outline<cr>", bufnr, "Symbols outline")
+				lsp_map("g[", "<cmd>Lspsaga diagnostic_jump_prev<cr>", bufnr, "Go to previous diagnostic")
+				lsp_map("g]", "<cmd>Lspsaga diagnostic_jump_next<cr>", bufnr, "Go to next diagnostic")
 
 				-- Create a command `:Format` local to the LSP buffer
 				vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
