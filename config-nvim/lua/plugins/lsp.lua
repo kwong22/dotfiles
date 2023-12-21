@@ -141,34 +141,39 @@ return {
 			})
 
 			-- Python
-			-- require("lspconfig")["pylsp"].setup({
+			require("lspconfig")["pylsp"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					pylsp = {
+						plugins = {
+							flake8 = {
+								enabled = true,
+								maxLineLength = 80, -- Black's line length
+							},
+							-- Disable plugins overlapping with flake8
+							pycodestyle = {
+								enabled = false,
+							},
+							mccabe = {
+								enabled = false,
+							},
+							pyflakes = {
+								enabled = false,
+							},
+							-- Use Black as the formatter
+							autopep8 = {
+								enabled = false,
+							},
+						},
+					},
+				},
+			})
+
+			-- Pyright for static type checking
 			require("lspconfig")["pyright"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				-- settings = {
-				-- 	pylsp = {
-				-- 		plugins = {
-				-- 			flake8 = {
-				-- 				enabled = true,
-				-- 				maxLineLength = 88, -- Black's line length
-				-- 			},
-				-- 			-- Disable plugins overlapping with flake8
-				-- 			pycodestyle = {
-				-- 				enabled = false,
-				-- 			},
-				-- 			mccabe = {
-				-- 				enabled = false,
-				-- 			},
-				-- 			pyflakes = {
-				-- 				enabled = false,
-				-- 			},
-				-- 			-- Use Black as the formatter
-				-- 			autopep8 = {
-				-- 				enabled = false,
-				-- 			},
-				-- 		},
-				-- 	},
-				-- },
 			})
 
 			-- Rust
