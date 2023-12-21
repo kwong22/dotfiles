@@ -1,3 +1,5 @@
 [user]
 	email = kwong22a@gmail.com
 	name = Kelvin Wong
+[init]
+	defaultBranch = main
