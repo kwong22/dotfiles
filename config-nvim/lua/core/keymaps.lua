@@ -142,8 +142,8 @@ end, { remap = true })
 map("n", "<leader>|", ':execute "set colorcolumn=" . (&colorcolumn == "" ? "81" : "")<cr>')
 
 -- FloaTerm configuration
-map("n", "<leader>t", "<cmd>Lspsaga term_toggle<cr>")
-map("t", "<Esc>", "<C-\\><C-n>:q<cr>")
+map("n", "<C-t>", "<cmd>Lspsaga term_toggle<cr>")
+map("t", "<C-t>", "<cmd>Lspsaga term_toggle<cr>")
 
 -- map("n", "<leader>ff", ":lua require('telescope.builtin').find_files()<cr>")
 -- map("n", "<leader>fp", ":lua require('telescope.builtin').git_files()<cr>")
@@ -189,4 +189,5 @@ map("n", "<leader>qf", ":TodoQuickFix<cr>")
 -- Trouble
 map("n", "<leader>e", ":TroubleToggle<cr>")
 
+-- Undo tree
 map("n", "<leader>u", ":UndotreeToggle<cr>")
