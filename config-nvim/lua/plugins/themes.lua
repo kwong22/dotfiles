@@ -17,4 +17,6 @@ return {
 	"sainnhe/everforest",
 
 	"savq/melange-nvim",
+
+	"nyoom-engineering/oxocarbon.nvim",
 }
