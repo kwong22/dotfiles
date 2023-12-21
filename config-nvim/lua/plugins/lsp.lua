@@ -20,9 +20,13 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"pylsp",
+					-- "pylsp",
+					"pyright",
 					"rust_analyzer",
 					"svelte",
+					"html",
+					"cssls",
+					"tailwindcss",
 					"tsserver",
 				},
 				automatic_installation = true,
@@ -36,6 +40,9 @@ return {
 
 			-- Turn on LSP status information
 			require("fidget").setup()
+
+			-- Set up format on save
+			require("lsp-format").setup()
 
 			-- Set up cool signs for diagnostics
 			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -102,6 +109,9 @@ return {
 
 				-- Attach and configure vim-illuminate
 				require("illuminate").on_attach(client)
+
+				-- Format on save
+				require("lsp-format").on_attach(client, bufnr)
 			end
 
 			-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -131,33 +141,34 @@ return {
 			})
 
 			-- Python
-			require("lspconfig")["pylsp"].setup({
+			-- require("lspconfig")["pylsp"].setup({
+			require("lspconfig")["pyright"].setup({
 				on_attach = on_attach,
 				capabilities = capabilities,
-				settings = {
-					pylsp = {
-						plugins = {
-							flake8 = {
-								enabled = true,
-								maxLineLength = 88, -- Black's line length
-							},
-							-- Disable plugins overlapping with flake8
-							pycodestyle = {
-								enabled = false,
-							},
-							mccabe = {
-								enabled = false,
-							},
-							pyflakes = {
-								enabled = false,
-							},
-							-- Use Black as the formatter
-							autopep8 = {
-								enabled = false,
-							},
-						},
-					},
-				},
+				-- settings = {
+				-- 	pylsp = {
+				-- 		plugins = {
+				-- 			flake8 = {
+				-- 				enabled = true,
+				-- 				maxLineLength = 88, -- Black's line length
+				-- 			},
+				-- 			-- Disable plugins overlapping with flake8
+				-- 			pycodestyle = {
+				-- 				enabled = false,
+				-- 			},
+				-- 			mccabe = {
+				-- 				enabled = false,
+				-- 			},
+				-- 			pyflakes = {
+				-- 				enabled = false,
+				-- 			},
+				-- 			-- Use Black as the formatter
+				-- 			autopep8 = {
+				-- 				enabled = false,
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
 			})
 
 			-- Rust
@@ -177,8 +188,24 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
+
+			require("lspconfig")["html"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
+			require("lspconfig")["cssls"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+
+			require("lspconfig")["tailwindcss"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
 		end,
 	},
+
 	{
 		"nvimdev/lspsaga.nvim",
 		config = function()
@@ -189,4 +216,6 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+
+	"lukas-reineke/lsp-format.nvim",
 }

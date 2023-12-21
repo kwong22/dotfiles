@@ -52,7 +52,7 @@ vim.o.guifont = "MonacoNerdFontMono-Regular:h12"
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force to select one from the menu
--- shortness: avoid showing extra messages when using completion
+-- shortmess: avoid showing extra messages when using completion
 -- updatetime: set updatetime for CursorHold
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
@@ -66,7 +66,7 @@ vim.api.nvim_set_option_value("updatetime", 250, {})
 vim.cmd([[
 set signcolumn=yes
 " Show diagnostics on hover
-" autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
 -- Vimspector options
