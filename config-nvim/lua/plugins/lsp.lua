@@ -148,12 +148,15 @@ return {
 					pylsp = {
 						plugins = {
 							flake8 = {
-								enabled = true,
-								maxLineLength = 80, -- Black's line length
+								-- enabled = true,
+								-- maxLineLength = 80, -- Black's line length
+								enabled = false, -- Disable flake8 to avoid overlap with Pyright
 							},
 							-- Disable plugins overlapping with flake8
 							pycodestyle = {
-								enabled = false,
+								-- enabled = false,
+								enabled = true, -- Enable for code formatting
+								max_line_length = 80,
 							},
 							mccabe = {
 								enabled = false,
