@@ -26,6 +26,11 @@ return {
 		"smoka7/hop.nvim",
 		version = "*",
 		opts = {},
+		config = function()
+			require("hop").setup {
+				keys = 'aoeidtn\',.pyfgcrl;qjkxbmuh',
+			}
+		end,
 	},
 	"mbbill/undotree",
 	{
@@ -38,4 +43,5 @@ return {
 		main = "ibl",
 		opts = {},
 	},
+	"ledger/vim-ledger",
 }

@@ -3,3 +3,8 @@
 	name = Kelvin Wong
 [init]
 	defaultBranch = main
+[diff]
+    external = difft
+[core]
+	editor = nvim
+	hooksPath = /Users/kwong/.commitlint/hooks

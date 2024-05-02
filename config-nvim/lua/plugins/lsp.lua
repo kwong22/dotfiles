@@ -211,6 +211,16 @@ return {
 				on_attach = on_attach,
 				capabilities = capabilities,
 			})
+
+			require("lspconfig")["clangd"].setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+				cmd = {
+					"clangd",
+					-- for warning: multiple different client offset_encodings detected for buffer, this is not supported yet
+					"--offset-encoding=utf-16",
+				},
+			})
 		end,
 	},
 

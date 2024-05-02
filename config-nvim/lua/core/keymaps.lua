@@ -81,9 +81,9 @@ map("n", "<S-Right>", "<C-w><S-l>", "Move window to the right")
 
 -- Deleting buffers
 local buffers = require("helpers.buffers")
-map("n", "<leader>db", buffers.delete_this, "Delete current buffer")
+-- map("n", "<leader>db", buffers.delete_this, "Delete current buffer")
 map("n", "<leader>do", buffers.delete_others, "Delete other buffers")
-map("n", "<leader>da", buffers.delete_all, "Delete all buffers")
+-- map("n", "<leader>da", buffers.delete_all, "Delete all buffers")
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<cr>")
@@ -116,11 +116,13 @@ map("v", ">", ">gv")
 -- map("n", "cc", "<Plug>(comment_toggle_linewise_current)")
 -- map("n", "cb", "<Plug>(comment_toggle_blockwise_current)")
 map("n", "<C-_>", "<Plug>(comment_toggle_linewise_current)") -- <C-_> for control + forward slash
+map("n", "<C-/>", "<Plug>(comment_toggle_linewise_current)") -- <C-_> for control + forward slash
 
 -- Toggle in VISUAL mode
 -- map("x", "cc", "<Plug>(comment_toggle_linewise_visual)")
 -- map("x", "cb", "<Plug>(comment_toggle_blockwise_visual)")
 map("x", "<C-_>", "<Plug>(comment_toggle_linewise_visual)")
+map("x", "<C-/>", "<Plug>(comment_toggle_linewise_visual)")
 
 -- Hop keybindings
 local hop = require("hop")
@@ -166,22 +168,25 @@ map("t", "<C-t>", "<cmd>Lspsaga term_toggle<cr>")
 
 -- Vimspector
 vim.cmd([[
-nmap <F9> <cmd>call vimspector#Launch()<cr>
-nmap <F5> <cmd>call vimspector#StepOver()<cr>
-nmap <F8> <cmd>call vimspector#Reset()<cr>
-nmap <F11> <cmd>call vimspector#StepOver()<cr>
+" nmap <F3> <cmd>call vimspector#Stop()<cr> " stop debugging
+nmap <F3> <cmd>call vimspector#Reset()<cr> " stop debugging
+nmap <F4> <cmd>call vimspector#Restart()<cr> " restart debugging with same configuration
+nmap <F5> <cmd>call vimspector#Continue()<cr> " when debugging, continue. else, start debugging
+nmap <F6> <cmd>call vimspector#Pause()<cr>
+nmap <F10> <cmd>call vimspector#StepOver()<cr>
+nmap <F11> <cmd>call vimspector#StepInto()<cr>
 nmap <F12> <cmd>call vimspector#StepOut()<cr>
-nmap <F10> <cmd>call vimspector#StepInto()<cr>
 ]])
--- map("n", "Db", ":call vimspector#ToggleBreakpoint()<cr>")
-map("n", "<leader>db", ":call vimspector#ToggleBreakpoint()<cr>")
--- map('n', "DB", ":call vimspector#ClearBreakpoints()<cr>")
--- map("n", "Dw", ":call vimspector#AddWatch()<cr>")
-map("n", "<leader>dw", ":call vimspector#AddWatch()<cr>")
--- map("n", "De", ":call vimspector#Evaluate()<cr>")
 
--- map('n', '<leader>dw', ':VimspectorWatch ')
+map("n", "<leader>dt", ":call vimspector#ToggleBreakpoint()<cr>")
+map('n', "<leader>dT", ":call vimspector#ClearBreakpoints()<cr>")
+map("n", "<leader>dw", ":call vimspector#AddWatch()<cr>")
 map("n", "<leader>de", ":VimspectorEval ")
+
+-- For normal mode, evaluate word under the cursor
+map("n", "<leader>di", "<Plug>VimspectorBalloonEval")
+-- For visual mode, evaluate the visually selected text
+map("x", "<leader>di", "<Plug>VimspectorBalloonEval")
 
 -- Todo List
 map("n", "<leader>qf", ":TodoQuickFix<cr>")
