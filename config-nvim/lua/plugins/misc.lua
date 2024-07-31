@@ -22,16 +22,16 @@ return {
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"tpope/vim-surround", -- Surround stuff with the ys-, cs-, ds- commands
 
-	{
-		"smoka7/hop.nvim",
-		version = "*",
-		opts = {},
-		config = function()
-			require("hop").setup {
-				keys = 'aoeidtn\',.pyfgcrl;qjkxbmuh',
-			}
-		end,
-	},
+	-- {
+	-- 	"smoka7/hop.nvim",
+	-- 	version = "*",
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("hop").setup {
+	-- 			keys = 'aoeidtn\',.pyfgcrl;qjkxbmuh',
+	-- 		}
+	-- 	end,
+	-- },
 	"mbbill/undotree",
 	{
 		"windwp/nvim-autopairs",
