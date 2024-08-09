@@ -20,10 +20,10 @@ map("v", "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 -- Paste from system clipboard
--- map('n', '<leader>p', [["+p]])
--- map('n', '<leader>P', [["+P]])
--- map('v', '<leader>p', [["+p]])
--- map('v', '<leader>P', [["+P]])
+map('n', '<leader>p', [["+p]])
+map('n', '<leader>P', [["+P]])
+map('v', '<leader>p', [["+p]])
+map('v', '<leader>P', [["+P]])
 
 -- map('n', '<leader>d', [["_d]]) -- delete into void register (don't keep what is deleted)
 -- map('v', '<leader>d', [["_d]]) -- delete into void register (don't keep what is deleted)
@@ -61,19 +61,19 @@ map("n", "gx", vim.diagnostic.open_float, "Show diagnostics under cursor")
 -- map("n", "<M-h>", "^", "Go to beginning of line")
 -- map("n", "<M-l>", "$", "Go to end of line")
 
--- Better window navigation
-map("n", "<C-h>", "<C-w><C-h>", "Navigate windows to the left")
-map("n", "<C-j>", "<C-w><C-j>", "Navigate windows down")
-map("n", "<C-k>", "<C-w><C-k>", "Navigate windows up")
-map("n", "<C-l>", "<C-w><C-l>", "Navigate windows to the right")
+-- Better pane navigation
+map("n", "<C-h>", "<C-w>h", "Navigate to left pane")
+map("n", "<C-j>", "<C-w>j", "Navigate to below pane")
+map("n", "<C-k>", "<C-w>k", "Navigate to above pane")
+map("n", "<C-l>", "<C-w>l", "Navigate to right pane")
 
--- Move with shift-arrows
-map("n", "<S-Left>", "<C-w><S-h>", "Move window to the left")
-map("n", "<S-Down>", "<C-w><S-j>", "Move window down")
-map("n", "<S-Up>", "<C-w><S-k>", "Move window up")
-map("n", "<S-Right>", "<C-w><S-l>", "Move window to the right")
+-- Move pane with shift-arrows
+map("n", "<S-Left>", "<C-w><S-h>", "Move pane to the left")
+map("n", "<S-Down>", "<C-w><S-j>", "Move pane down")
+map("n", "<S-Up>", "<C-w><S-k>", "Move pane up")
+map("n", "<S-Right>", "<C-w><S-l>", "Move pane to the right")
 
--- Resize with arrows
+-- Resize pane with arrows
 -- map("n", "<C-Up>", ":resize +2<CR>")
 -- map("n", "<C-Down>", ":resize -2<CR>")
 -- map("n", "<C-Left>", ":vertical resize +2<CR>")
