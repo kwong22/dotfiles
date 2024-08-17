@@ -12,6 +12,9 @@
     ~/.config/nvim:
         create: true
         path: config-nvim
+    ~/.config/wezterm:
+        create: true
+        path: config-wezterm
 
 - create:
     - ~/downloads

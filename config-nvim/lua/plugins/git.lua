@@ -28,4 +28,5 @@ return {
 			map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
 		end,
 	},
+	"github/copilot.vim",
 }
