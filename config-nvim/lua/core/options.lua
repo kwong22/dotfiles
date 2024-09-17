@@ -80,4 +80,13 @@ let g:vimspector_terminal_maxwidth = 70
 vim.cmd([[
 au FileType * set fo-=c fo-=r fo-=o
 ]])
+
 -- vim.opt.formatoptions:remove({ "c", "r", "o" })
+
+-- Set transparent background
+vim.cmd [[
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+]]
