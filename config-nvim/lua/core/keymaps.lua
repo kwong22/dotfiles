@@ -192,7 +192,7 @@ map("x", "<leader>di", "<Plug>VimspectorBalloonEval")
 map("n", "<leader>qf", ":TodoQuickFix<cr>")
 
 -- Trouble
-map("n", "<leader>e", ":TroubleToggle<cr>")
+map("n", "<leader>e", "<cmd>Trouble diagnostics toggle<cr>")
 
 -- Undo tree
 map("n", "<leader>u", ":UndotreeToggle<cr>")
